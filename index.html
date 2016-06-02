@@ -17,44 +17,42 @@
         <div class="center">
             <h1>Jekyll and Hyde Quiz</h1>
             <h4>Some fun facts about Jekyll and Hyde!</h4>
-            <input type="submit" value="Play Game" class="button" id="start">
+            <input type="submit" value="Play Game" class="button" id="startGame">
         </section>
         </div>
-        <section class="gameArea" style="display: none;">
-        <div>
-            <h3>Question 1 of 5</h3>
-        </div>
+        <section class="gameArea">
         <div id="content">
-            <div class="question_one">
+            <div class="questionHolder">
                 <h3 id="question">Question 1: Who wrote the novella 'The Strange Case of Dr. Jekyll and Mr. Hyde?</h3>
             </div>
         </div>
         <form id="answerHolder">
-            <div class="answers"
+            <div class="answers images"
             put image here!
             <div>
-                <input type="radio" name="robert_louis_stevenson" value="0">
+                <input type="radio" name="robert_louis_stevenson" id="answer1" value="0">
                 <label class="answer">Robert Louis Stevenson</label>
             </div>
             <div>
-                <input type="radio" name="bram_stoker" value="1">
+                <input type="radio" name="bram_stoker" id="answer2" value="1">
                 <label class="answer">Bram Stoker</label>
             </div>
             <div>
-                <input type="radio" name="stephen_king" value="2">
+                <input type="radio" name="stephen_king" id="answer3" value="2">
                 <label class="answer">Stephen King</label>
             </div>
             <div>
-                <input type="radio" name="mary_shelley" value="3">
+                <input type="radio" name="mary_shelley" id="answer4" value="3">
                 <label class="answer">Mary Shelley</label>
             </div>
             <div id="button">
-            <input type="button" id="submit" value="Submit Answer">
+            <input type="button" id="submitAnswer" value="Submit Answer">
             <div id="score">
             <p>0 correct out of 5 possible questions.</p>
             </div>
             </div>
         </form>
+        </section>
             
         
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>    
