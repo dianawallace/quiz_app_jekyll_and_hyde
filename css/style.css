@@ -24,10 +24,15 @@ h4 {
 
 .gameArea {
     text-align: center;
+    display: none;
 }
 
 .images {
     float: left;
+}
+
+.answers {
+    display: block;
 }
 
 
