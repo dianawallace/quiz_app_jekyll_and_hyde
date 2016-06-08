@@ -35,6 +35,14 @@ h4 {
     display: block;
 }
 
+#displayScore {
+    display: none;
+}
+
+#final {
+    display: none;
+}
+
 
 
 .clearfix:after {
