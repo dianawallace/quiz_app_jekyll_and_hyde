@@ -119,23 +119,26 @@ jQuery(document).ready(function($) {
         $('#submitAnswer').hide();
         $('.gameArea').hide();
         $('#final').show();
+        
     
-        $('.results').html('<h2>Thanks for talking the Jekyll and Hyde Quiz</h2>' +
-            '<h2>Here are the final results</h2>:' +
-            '<h2>' + score + ' out of ' + quiz.length + 'question, ' +
-            Math.round(score / quiz.length * 100) + '%</h2>');
-    };
-
+    //    $('.results').html('<h2>Thanks for talking the Jekyll and Hyde Quiz</h2>' +
+    //        '<h2>Here are the final results:</h2>' +
+    //        '<h2>' + score + ' out of ' + quiz.length + ' questions, ' +
+    //        Math.round(score / quiz.length * 100) + '%</h2>');
+        $('#count').text(score);
+        $('#total').text(quiz.length);
+        $('#percentage').text(Math.round(score/quiz.length * 100) + '%');
+        
+   }
     
+    function playAgain() {
 
+        $('#intro').show();
+        $('#displayScore').hide(); 
+        
+    }
 
-    //    function gameEnds() {
-    //  on click of Play Again button reload page 
-
-    // }
 });
 
 
-// Compares the user's answer, and the correct answer to determine a score
-// Displays the user's final score once all questions have been answered
-// Allows the user to start a new game once all questions have been answered
+
