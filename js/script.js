@@ -28,7 +28,7 @@ jQuery(document).ready(function($) {
     var content = $('#content'),
         question = $('#question'),
         answerDiv = $('.answers'),
-        score = $('#score'),
+        scoreDiv = $('#score'),
         submitAnswer = $('#submitAnswer');
 
 
@@ -45,6 +45,7 @@ jQuery(document).ready(function($) {
 
         $('.gameArea').show();
         $('#intro').hide();
+        $('#submitAnswer').show();
 
         displayQuestion();
 
@@ -64,7 +65,7 @@ jQuery(document).ready(function($) {
         }
     
         // move to next question
-        console.log(score);
+        //console.log(score);
 
     });
 
@@ -86,9 +87,8 @@ jQuery(document).ready(function($) {
 
         answerDiv.html(answersHTML);
 
-        if (currentQuestion === 0) {
-            score.textContent = '0 out of ' +
-                quiz.length + 'possible questions.';
+        if (currentQuestion == 0) {
+            scoreDiv.text('0');
             submitAnswer.textContent = "Submit Answer";
         }
     }
@@ -119,7 +119,6 @@ jQuery(document).ready(function($) {
         $('#submitAnswer').hide();
         $('.gameArea').hide();
         $('#final').show();
-        
     
     //    $('.results').html('<h2>Thanks for talking the Jekyll and Hyde Quiz</h2>' +
     //        '<h2>Here are the final results:</h2>' +
@@ -127,15 +126,21 @@ jQuery(document).ready(function($) {
     //        Math.round(score / quiz.length * 100) + '%</h2>');
         $('#count').text(score);
         $('#total').text(quiz.length);
-        $('#percentage').text(Math.round(score/quiz.length * 100) + '%');
-        
-   }
+        $('#percentage').text(Math.round(score / quiz.length * 100) + '%');
+    }
+   
+   $('#playAgain').on('click', function() {
+        playAgain();
+    });
     
     function playAgain() {
 
         $('#intro').show();
-        $('#displayScore').hide(); 
-        
+        $('#displayScore').hide();
+        $('.results').hide();
+        currentQuestion = 0;
+        score = 0;
+        console.log(score);
     }
 
 });
