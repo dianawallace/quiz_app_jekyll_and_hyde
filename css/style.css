@@ -12,6 +12,10 @@ h1 {
     margin-top: 100px;
 }
 
+h3 {
+    text-align: center;
+}
+
 h4 {
     margin-top: 50px;
 }
@@ -23,7 +27,6 @@ h4 {
 }
 
 .gameArea {
-    text-align: center;
     display: none;
 }
 
@@ -33,6 +36,8 @@ h4 {
 
 .answers {
     display: block;
+    list-style-type: none;
+    
 }
 
 #displayScore {

@@ -46,6 +46,7 @@ jQuery(document).ready(function($) {
         $('.gameArea').show();
         $('#intro').hide();
         $('#submitAnswer').show();
+        
 
         displayQuestion();
 
@@ -92,7 +93,7 @@ jQuery(document).ready(function($) {
             submitAnswer.textContent = "Submit Answer";
         }
     }
-
+    
     function checkAnswer() {
         // compare user answer with answer in object
         // access quiz[n].correct
@@ -106,8 +107,8 @@ jQuery(document).ready(function($) {
             if ($("input[name=quiz" + key + "]:checked").val() == value.correct) {
                 score++;
                 // console.log(score)
-            }
-        });
+        }
+    });
 
         $('#score').text(score);
     }
@@ -137,7 +138,7 @@ jQuery(document).ready(function($) {
 
         $('#intro').show();
         $('#displayScore').hide();
-        $('.results').hide();
+        $('#final').hide();
         currentQuestion = 0;
         score = 0;
         console.log(score);
