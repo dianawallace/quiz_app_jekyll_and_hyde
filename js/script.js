@@ -58,13 +58,11 @@ jQuery(document).ready(function($) {
     $('#answerHolder').submit(function(e) {
         e.preventDefault();
         //prevent user from skipping questions
-     
-          if ($('.answers').is(':not(:checked)')) { 
+        if (!$('input[type = "radio"]').is(':checked')){ 
             alert('please select an answer');
                 return;
-          }
-                
-        checkAnswer();
+        }
+              checkAnswer();
         if (currentQuestion < 4){
         currentQuestion++;
         displayQuestion();
