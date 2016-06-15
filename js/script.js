@@ -57,6 +57,13 @@ jQuery(document).ready(function($) {
 
     $('#answerHolder').submit(function(e) {
         e.preventDefault();
+        //prevent user from skipping questions
+     
+          if ($('.answers').is(':not(:checked)')) { 
+            alert('please select an answer');
+                return;
+          }
+                
         checkAnswer();
         if (currentQuestion < 4){
         currentQuestion++;
@@ -69,7 +76,8 @@ jQuery(document).ready(function($) {
         //console.log(score);
 
     });
-
+    
+   
     function displayQuestion() {
 
         var answers = quiz[currentQuestion].answers,
@@ -112,9 +120,11 @@ jQuery(document).ready(function($) {
 
         $('#score').text(score);
     }
-
-   
-   function displayScore() {
+    
+     
+       
+       
+    function displayScore() {
 
         $('#displayScore').show();
         $('#submitAnswer').hide();
