@@ -32,6 +32,11 @@ h4 {
 
 .images {
     float: left;
+    margin-right: 50px;
+}
+
+#answerHolder {
+    margin-left: 400px;
 }
 
 .answers {
