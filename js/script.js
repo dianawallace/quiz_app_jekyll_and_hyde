@@ -42,42 +42,32 @@ jQuery(document).ready(function($) {
     });
 
     function playGame() {
-
         $('.gameArea').show();
         $('#intro').hide();
         $('#submitAnswer').show();
-        
-
         displayQuestion();
-
     }
-    $('#submitAnswer').on('click', function() {
-
-    });
 
     $('#answerHolder').submit(function(e) {
         e.preventDefault();
         //prevent user from skipping questions
-        if (!$('input[type = "radio"]').is(':checked')){ 
+        if (!$('input[type = "radio"]').is(':checked')) {
             alert('please select an answer');
-                return;
+            return;
         }
-              checkAnswer();
-        if (currentQuestion < 4){
-        currentQuestion++;
-        displayQuestion();
-        } else {
+        checkAnswer();
+        if (currentQuestion < 4) {
+            currentQuestion++;
+            displayQuestion();
+        }
+        else {
             displayScore();
         }
-    
         // move to next question
         //console.log(score);
-
     });
-    
-   
-    function displayQuestion() {
 
+    function displayQuestion() {
         var answers = quiz[currentQuestion].answers,
             answersHTML = '';
 
@@ -87,63 +77,43 @@ jQuery(document).ready(function($) {
                 "' value='" + answers[i] + "'/>" +
                 " <label class='answer" + (i + 1) + "'>" + answers[i] + "</label></li>";
         }
-        // console.log(answersHTML); 
-
+        // console.log(answersHTML);
         question.text("Question " + (currentQuestion + 1) + ": " +
             quiz[currentQuestion].question);
-
         answerDiv.html(answersHTML);
-
         if (currentQuestion == 0) {
             scoreDiv.text('0');
             submitAnswer.textContent = "Submit Answer";
         }
     }
-    
+
     function checkAnswer() {
         // compare user answer with answer in object
-        // access quiz[n].correct
-        // compare value of input with object value
-
-        // $("input[name=quiz0]:checked").val();
-        // quiz[0].correct;
         $.each(quiz, function(key, value) {
-
             console.log(key + ": " + value.correct);
             if ($("input[name=quiz" + key + "]:checked").val() == value.correct) {
                 score++;
                 // console.log(score)
-        }
-    });
-
+            }
+        });
         $('#score').text(score);
     }
-    
-     
-       
-       
-    function displayScore() {
 
+    function displayScore() {
         $('#displayScore').show();
         $('#submitAnswer').hide();
         $('.gameArea').hide();
         $('#final').show();
-    
-    //    $('.results').html('<h2>Thanks for talking the Jekyll and Hyde Quiz</h2>' +
-    //        '<h2>Here are the final results:</h2>' +
-    //        '<h2>' + score + ' out of ' + quiz.length + ' questions, ' +
-    //        Math.round(score / quiz.length * 100) + '%</h2>');
         $('#count').text(score);
         $('#total').text(quiz.length);
         $('#percentage').text(Math.round(score / quiz.length * 100) + '%');
     }
-   
-   $('#playAgain').on('click', function() {
+
+    $('#playAgain').on('click', function() {
         playAgain();
     });
-    
-    function playAgain() {
 
+    function playAgain() {
         $('#intro').show();
         $('#displayScore').hide();
         $('#final').hide();
@@ -151,8 +121,4 @@ jQuery(document).ready(function($) {
         score = 0;
         console.log(score);
     }
-
 });
-
-
-
