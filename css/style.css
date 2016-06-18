@@ -1,5 +1,4 @@
 
-
 body {
     background-color: #a4bcba;
 }
@@ -23,7 +22,6 @@ h4 {
 .button {
     background-color: #9eb67a;
     margin-top: 100px;
-    
 }
 
 .gameArea {
@@ -42,7 +40,6 @@ h4 {
 .answers {
     display: block;
     list-style-type: none;
-    
 }
 
 #displayScore {
@@ -53,8 +50,6 @@ h4 {
     display: none;
     text-align: center;
 }
-
-
 
 .clearfix:after {
      visibility: hidden;
