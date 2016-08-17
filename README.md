@@ -1,2 +1,3 @@
-# quiz_app_jekyll_and_hyde
-A quiz app about Jekyll and Hyde
+Quiz App about Jekyll and Hyde
+
+Utilized: HTML, CSS, jQuery, and JavaScript
